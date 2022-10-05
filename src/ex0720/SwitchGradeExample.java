@@ -1,11 +1,8 @@
-package ex0719;
+package ex0720;
 
-//성적표기능을 만들 클래스를 선언하고 메인메소드 작성한다.
-public class GradeExample {
+public class SwitchGradeExample {
 	public static void main(String[] args) {
-		
-		
-		// 이름(String)을 저장할 변수를 선언한다.
+		// 본인 이름(String)을 저장할 변수를 선언한다.
         // 국어(int),영어(int),수학(int) 점수를 저장할 변수를 선언한다.
         // 총점(int), 평균(double), 학점(char)을 저장할 변수를 선언한다.
 		String name = "홍길동";
@@ -30,18 +27,25 @@ public class GradeExample {
 
 
 		// 평균이 90이상면 A, 80 ~ 89 사이면 B , 70~79 사이면 C , 60 ~ 69 사이면 D 나머지는 F
-		if(average>=90.0) {
-			grade = 'A';
-		} else if(average>=80.0) { 
-			grade = 'B';
-		} else if(average>=70.0) { 
-			grade = 'C';
-		} else if(average>=60.0) { 
-			grade = 'D';
-		} else {
-			grade = 'F';
+		//System.out.println(((int)average/10)); // 몫
+		//System.out.println(((int)average%10)); // 나머지
+		switch((int)average/10) {
+			case 10:
+			case 9: 
+				grade = 'A';
+				break;
+			case 8: 
+				grade = 'B';
+				break;
+			case 7: 
+				grade = 'C';
+				break;
+			case 6: 
+				grade = 'D';
+				break;
+			default: 
+				grade = 'F';
 		}
-
 
 		// 이름 , 국어점수, 영어점수, 수학점수, 총점,평균, 학점을 예쁘게 출력해본다.
 		System.out.println("이름: " + name);
@@ -51,6 +55,6 @@ public class GradeExample {
 		System.out.println("총점: " + sum);
 		System.out.println("평균: " + average);
 		System.out.println("학점: " + grade);
-
+		
 	}
 }
